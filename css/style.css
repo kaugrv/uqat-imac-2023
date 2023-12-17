@@ -1,0 +1,772 @@
+/* CSS - TP2 ARN-2304 - Wendy GERVAIS - AUT. 2023 */
+
+@font-face {
+  font-family: "Adorage";
+  src: url("../fonts/Adorage.otf") format("opentype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Adorage", serif;
+  color: #333;
+  background-color: #f6f5f0;
+
+  margin: 0;
+
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p a {
+  color: rgb(197, 132, 89);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+p a:hover {
+  color: black;
+  transition: 0.3s;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 3vw;
+  text-shadow: #f6f5f0 1px 0 2px;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 4vw;
+  margin: 0;
+}
+
+.section {
+  padding: 50px;
+  display: flex;
+}
+
+@keyframes cta-anim {
+  0% {
+    transform: rotate(3deg);
+  }
+
+  10% {
+    transform: rotate(-3deg);
+  }
+
+  20% {
+    transform: rotate(3deg);
+  }
+
+  30% {
+    transform: rotate(3deg);
+  }
+
+  30% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  padding: 100px 300px;
+}
+
+.circlebase {
+  position: absolute;
+  opacity: 0.5;
+  z-index: -5;
+}
+
+/*Header et menu*/
+
+header {
+  background-color: #333;
+  height: 50px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+}
+
+header a,
+.bouton-burger,
+.logo {
+  text-align: center;
+  color: white;
+  text-align: center;
+  padding: 15px 100px;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 4vw;
+}
+
+.menu-full {
+  display: none;
+
+  position: sticky;
+  top: 0;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #333;
+
+  width: 100vw;
+  height: 100vh;
+  z-index: 8;
+}
+
+.menu-full a {
+  padding: 50px;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  transition: 0.3s;
+  width: 90vw;
+  text-align: center;
+}
+
+.menu-full img {
+  height: 5vw;
+}
+
+.menu-full a:hover {
+  color: #333;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.menu-full a:hover img {
+  filter: invert();
+  transition: 0.3s;
+}
+
+.bouton-burger {
+  display: none;
+  position: absolute;
+  right: 0;
+  padding: 14px 30px;
+  transition: 0.3s;
+}
+
+header a:hover,
+.bouton-burger:hover {
+  background-color: #f6f5f0;
+  color: black;
+  transition: 0.3s;
+}
+
+
+
+/*Section 0 : Intro*/
+
+
+.intro {
+  margin: 20vh 0 20vh 0;
+}
+
+
+#imac,
+#cnm {
+  cursor: pointer;
+}
+
+
+.logo:hover img {
+  filter: invert();
+  transition: 0.3s;
+}
+
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logos img {
+  height: 25vh;
+  margin: 5vh 5vw;
+}
+
+@keyframes flecheanim {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  50% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+.fleche {
+  color: #333;
+  font-size: 3em;
+  text-decoration: none;
+  animation: flecheanim infinite 2s ease-in-out;
+}
+
+.orbit1 {
+  position: absolute;
+  z-index: -1;
+  scale: 0.5;
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+.orbit2 {
+  position: absolute;
+  z-index: -1;
+  scale: 0.6;
+  opacity: 0.5;
+  filter: blur(5px);
+  white-space: nowrap;
+}
+
+.orbit3 {
+  position: absolute;
+  z-index: -1;
+  scale: 0.7;
+  opacity: 0.5;
+  filter: blur(10px);
+  white-space: nowrap;
+}
+
+
+
+/*Section 1 : Matieres */
+
+.section1 {
+  flex-direction: column;
+}
+
+
+.carousel-matieres {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.matiere {
+  text-transform: uppercase;
+  font-size: 3rem;
+  white-space: nowrap;
+  /*Pour dépasser de l'écran*/
+  transition: 0.3s;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.matiere:hover {
+  opacity: 1;
+}
+
+.matiere:hover .nom {
+  transition: 0.7s;
+}
+
+.matiere1:hover .nom {
+  color: rgb(197, 89, 123);
+  transition: 0.3s;
+}
+
+.matiere2:hover .nom {
+  color: rgb(89, 113, 197);
+  transition: 0.3s;
+}
+
+.matiere3:hover .nom {
+  color: rgb(233, 127, 57);
+  transition: 0.3s;
+}
+
+.matiere4:hover .nom {
+  color: rgb(101, 172, 97);
+  transition: 0.3s;
+}
+
+.matiere5:hover .nom {
+  color: rgb(220, 178, 7);
+  transition: 0.3s;
+}
+
+/*Bouton "Voir la liste complète"*/
+.bouton-matieres {
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  animation: cta-anim infinite 2s ease-in-out;
+}
+
+.bouton-matieres:hover {
+  color: #333;
+  background-color: #f6f5f0;
+  box-shadow: inset 0px 0px 0px 3px #333;
+  transition: 0.3s;
+}
+
+/*Section 2 : UQAT */
+
+
+.section2 {
+  background-image: url("../images/uqat/uqat-imac-2023-fond-campus.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 150vh;
+  display: block;
+
+  margin-bottom: 20vh;
+
+}
+
+.ouverte {
+  font-size: 3vw;
+  line-height: 2.5vw;
+
+  position: relative;
+  left: 10%;
+  top: 10%;
+
+  background-color: #33333390;
+
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+
+  color: white;
+
+  width: fit-content;
+}
+
+.pratique {
+  font-size: 2vw;
+}
+
+.salles {
+  font-size: 2vw;
+  line-height: 2.5vw;
+  position: relative;
+
+  left: 60%;
+  top: 0%;
+  color: white;
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: #33333390;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 30px;
+
+  width: fit-content;
+}
+
+.rtx,
+.tablette,
+.camera {
+  width: 20vw;
+  position: absolute;
+  height: fit-content;
+  margin-top: 10%;
+  z-index: 5;
+
+}
+
+.rtx:hover,
+.tablette:hover,
+.camera:hover {
+  filter: brightness(1.5);
+
+}
+
+.rtx {
+  left: 10%;
+}
+
+.tablette {
+  rotate: -10deg;
+  left: 45%;
+}
+
+.camera {
+  left: 75%;
+}
+
+.section2 p {
+  border-radius: 15px;
+  position: relative;
+  top: 26%;
+  margin-top: 10vh;
+  text-align: justify;
+}
+
+.vie-uqat {
+  border-radius: 50%;
+  width: 10vw;
+  filter: grayscale();
+  transition: 0.3s;
+  cursor: pointer;
+  animation: cta-anim infinite 2s ease-in-out;
+
+  display: block;
+  margin: 0 auto;
+
+  padding: 10vh;
+
+}
+
+.vie-uqat:hover {
+  filter: none;
+  transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+/*Section 3 : Photos Québec */
+
+.section3 {
+  flex-direction: column;
+}
+
+
+.row-1,
+.row-2,
+.row-3 {
+  display: flex;
+  position: relative;
+  left: -10%;
+}
+
+.row-1 img,
+.row-1 iframe {
+  height: 45vh;
+  margin: 10px;
+  border-radius: 5px;
+  justify-content: space-around;
+}
+
+
+.row-2 img,
+.row-2 iframe {
+  height: 45vh;
+  margin: 10px;
+  position: relative;
+  border-radius: 5px;
+  left: -10%;
+}
+
+.row-3 img,
+.row-3 iframe {
+  height: 45vh;
+  margin: 10px;
+  position: relative;
+  border-radius: 5px;
+  left: -10%;
+}
+
+.grille-photos {
+  display: none;
+  grid-template-columns: auto auto auto;
+}
+
+.grille-photos img {
+  object-fit: cover;
+  width: 15vw;
+  height: 15vw;
+  margin: 4vw;
+
+  border-radius: 5px;
+}
+
+
+/*Section 4 : Papiers démarches */
+
+.section4 {
+  flex-direction: column;
+  align-items: center;
+}
+
+.papiers {
+  display: flex;
+  margin-top: 15vh;
+}
+
+.papiers img {
+  height: 45vh;
+  margin: 40px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.papier-exp {
+
+  margin-top: 6vh;
+
+  width: 70vw;
+}
+
+.papier-exp b {
+  font-size: 2em;
+}
+
+.bouton-papiers {
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+  transition: 0.3s;
+  margin-top: 5vh;
+
+  animation: cta-anim infinite 2s ease-in-out;
+
+  display: none;
+}
+
+.bouton-papiers:hover {
+  color: #333;
+  background-color: #f6f5f0;
+  box-shadow: inset 0px 0px 0px 3px #333;
+  transition: 0.3s;
+}
+
+
+
+
+
+/*Section 5 : Conclusion */
+
+.section5 {
+  flex-direction: column;
+  align-items: center;
+}
+
+.section5 iframe {
+  width: 50%;
+  height: 50vh;
+  border-radius: 15px;
+}
+
+
+.video-avion {
+  width: 50vw;
+  border-radius: 5px;
+
+  margin-top: 10vh;
+}
+
+.billet {
+  position: relative;
+  left: 18%;
+  transform: rotate(345deg);
+  width: 30vw;
+}
+
+
+
+
+/*Footer*/
+
+footer {
+  color: #f6f5f0;
+  background-color: #333;
+
+  position: relative;
+  bottom: 0;
+
+  text-align: center;
+
+  padding: 50px;
+
+}
+
+footer a {
+  color: rgb(197, 132, 89);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #f6f5f0;
+  transition: 0.3s;
+}
+
+html, body {
+  max-width: 115%;
+  overflow-x: hidden;
+}
+
+/*Reponsive*/
+
+@media screen and (max-width: 1200px) {
+  header a {
+    display: none;
+  }
+
+  .bouton-burger {
+    display: block;
+  }
+
+  .orbit1,
+  .orbit2,
+  .orbit3 {
+
+    height: 150%;
+  }
+
+  .matiere {
+    font-size: 4vw;
+  }
+
+
+  #imac,
+  #cnm {
+    height: 100px;
+  }
+
+  h2,
+  h3 {
+    font-size: 2em;
+    padding: 0 5vh;
+  }
+
+  h4 {
+    font-size: 2em;
+  }
+
+  .row-1,
+  .row-2,
+  .row-3 {
+    display: none;
+  }
+
+  .grille-photos {
+    display: grid;
+  }
+
+  .grille-photos img:hover {
+    scale: 1.1;
+    transition: 0.3s;
+  }
+
+  .grille-photos img {
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .rtx,
+  .tablette,
+  .camera {
+    width: 25vw;
+  }
+
+  .vie-uqat {
+    width: 15vw;
+  }
+
+  .papiers {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  p {
+    padding: 50px;
+  }
+
+  .section3 {
+
+    align-items: center;
+  }
+
+
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+  .rtx,
+  .tablette,
+  .camera {
+    display: none;
+  }
+
+
+  .salles,
+  .ouverte {
+    font-size: 3vw;
+
+  }
+
+  .salles {
+    left: 50%;
+  }
+
+  .section2 {
+    height: 100%;
+  }
+
+  .circles-container {
+    display: none;
+
+  }
+
+  p {
+    padding: 20px;
+  }
+
+  #imac,
+  #cnm {
+    height: 80px;
+    transform: translateY(60px);
+  }
+
+  .papiers img {
+    scale: 0.5;
+    margin: 0;
+  }
+
+  .papiers {
+    display: grid;
+    grid-template-columns: 33% 33%;
+    justify-content: center;
+    justify-items: center;
+  }
+
+
+}
